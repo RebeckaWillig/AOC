@@ -1038,16 +1038,13 @@ zoneight234
 
 smoltest = "ltpzstwo78fivefourstwox"
 
-new2 = smoltest.split()
+new2 = text.split()
 #print(new2)
 result2 = 0
 
 numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
-for subs in new:
-
-    print(subs)
-
+for subs in new2:
     indices = []
     for i in range(9):
         n1 = subs.find(numbers[i])
@@ -1075,7 +1072,6 @@ for subs in new:
             if indices[i] < smallestindex:
                 smallestindex = indices[i]
                 indexofsmall = i
-
     #print(smallestindex)
     #print(indexofsmall)
     #print(largestindex)
@@ -1084,27 +1080,8 @@ for subs in new:
     firstnumber = indexofsmall//2 + 1
     lastnumber = indexoflarge//2 + 1
 
-    #print(numbers[firstnumber])
-    #print(numbers[lastnumber])
-
-    #print(subs)
-    #subs = subs.replace(numbers[firstnumber], str(firstnumber+1), 1)
-    #subs = subs.replace(numbers[lastnumber], str(lastnumber+1))
-    #print(subs)
-
-    #digits = [] 
-    
-    #for char in subs:
-    #    if char.isnumeric():
-    #        digits.append(char)
-    #print(digits)
-
-    #length = len(digits)
-    #print(length)
-
-    #n = 10*int(digits[0]) + int(digits[length-1])
     n = 10*firstnumber + lastnumber
-    print(n)
+    #print(n)
 
     result2 += n
 
