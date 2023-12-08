@@ -1008,7 +1008,7 @@ new = text.split()
 result1 = 0
 
 for i in new:
-    digits = [] 
+    digits = []
     for char in i:
         if char.isnumeric():
             digits.append(char)
@@ -1036,25 +1036,34 @@ xtwone3four
 zoneight234
 7pqrstsixteen"""
 
-smoltest = "mq113scstpnnveightfive3nine"
+smoltest = "ltpzstwo78fivefourstwox"
 
-new2 = text.split()
-print(new2)
+new2 = smoltest.split()
+#print(new2)
 result2 = 0
 
 numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
-for subs in new2:
+for subs in new:
+
+    print(subs)
 
     indices = []
-
-    for i in numbers:
-        indices.append(subs.find(i))
-        indices.append(subs.rfind(i))
-
+    for i in range(9):
+        n1 = subs.find(numbers[i])
+        n2 = subs.find(str(i+1))
+        if n1 == -1:
+            indices.append(n2)
+        elif n2 == -1:
+            indices.append(n1)
+        else:
+            indices.append(min(n1,n2))
+        n1 = subs.rfind(numbers[i])
+        n2 = subs.rfind(str(i+1))
+        indices.append(max(n1,n2))
     #print(indices)
 
-    largestindex = 0
+    largestindex = -1
     indexoflarge = -1
     smallestindex = 100
     indexofsmall = -1
@@ -1072,28 +1081,29 @@ for subs in new2:
     #print(largestindex)
     #print(indexoflarge)
 
-    firstnumber = indexofsmall//2
-    lastnumber = indexoflarge//2
+    firstnumber = indexofsmall//2 + 1
+    lastnumber = indexoflarge//2 + 1
 
     #print(numbers[firstnumber])
     #print(numbers[lastnumber])
 
-    print(subs)
-    subs = subs.replace(numbers[firstnumber], str(firstnumber+1), 1)
-    subs = subs.replace(numbers[lastnumber], str(lastnumber+1))
-    print(subs)
+    #print(subs)
+    #subs = subs.replace(numbers[firstnumber], str(firstnumber+1), 1)
+    #subs = subs.replace(numbers[lastnumber], str(lastnumber+1))
+    #print(subs)
 
-    digits = [] 
+    #digits = [] 
     
-    for char in subs:
-        if char.isnumeric():
-            digits.append(char)
+    #for char in subs:
+    #    if char.isnumeric():
+    #        digits.append(char)
     #print(digits)
 
-    length = len(digits)
+    #length = len(digits)
     #print(length)
 
-    n = 10*int(digits[0]) + int(digits[length-1])
+    #n = 10*int(digits[0]) + int(digits[length-1])
+    n = 10*firstnumber + lastnumber
     print(n)
 
     result2 += n
