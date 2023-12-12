@@ -249,9 +249,9 @@ for i,subs in enumerate(new):
     for j in range(matches):
         copies[i+j+1] += copies[i]
     #print("Row",subs[1],count_points(matches))
-print(points)
+#print(points)
 result1 = sum(points)
 print("Part 1:",result1)
-print(copies)
+#print(copies)
 result2 = sum(copies)
 print("Part 2:", result2)
